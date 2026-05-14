@@ -6,8 +6,11 @@
     "dev": "next dev --turbo",
     "dev:webpack": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx --yes serve@14 out -l 3000",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "framer-motion": "^11.15.0",

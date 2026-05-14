@@ -4,5 +4,6 @@ out
 dist
 .turbo
 *.log
+*.tsbuildinfo
 .env*.local
 .DS_Store
