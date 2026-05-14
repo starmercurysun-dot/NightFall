@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100dvh;
+  background-color: #08080f;
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, rgba(147, 180, 255, 0.1) 0%, transparent 55%),
+    radial-gradient(80% 60% at 100% 40%, rgba(180, 168, 255, 0.05) 0%, transparent 45%);
+  background-attachment: fixed;
+  @apply text-slate-200 antialiased;
+}
+
+::selection {
+  @apply bg-indigo-500/25 text-slate-100;
+}
+
+@layer utilities {
+  .safe-pb {
+    padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+
+  .zen-surface {
+    @apply rounded-[1.75rem] border border-white/[0.06] backdrop-blur-2xl shadow-zen;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055) 0%,
+      rgba(255, 255, 255, 0.02) 48%,
+      rgba(255, 255, 255, 0.04) 100%
+    );
+  }
+
+  .zen-quiet {
+    @apply text-slate-500;
+  }
+
+  .animate-confetti-drift {
+    animation: confetti-drift 3.5s ease-in-out infinite;
+  }
+}
+
+@keyframes confetti-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(8deg);
+  }
+}
